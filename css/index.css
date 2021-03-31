@@ -1,0 +1,118 @@
+/* 공통 사항 */
+
+* { margin:0; padding:0; box-sizing: border-box;}
+
+
+/* Hero Slide CSS */
+
+.hero { width: 100%; height: 857px; position: relative; background-color: black;}
+.hero_slide { width: 100%; height: 100%; position: absolute; top:0; left:0;
+padding: 120px; transition: all 0.4s;}
+.hero .hero_slide:nth-child(1) {background-image: url(../img/hero_1.png);
+z-index: 3; }
+.hero .hero_slide:nth-child(2) {background-image: url(../img/hero_2.png);
+z-index: 2; }
+.hero .hero_slide:nth-child(3) {background-image: url(../img/hero_3.png);
+z-index: 1; }
+.hero .hero_slide:nth-child(4) {background-image: url(../img/hero_4.png);
+   z-index: 1; }
+.hero .hero_slide:nth-child(5) {background-image: url(../img/hero_5.png);
+      z-index: 1; }
+
+.hero_slide_title { font-size: 70px;
+color:rgba(255,255,255,1);}
+
+
+.hero_slide_nav { 
+   width: 100px;
+   position:absolute;
+   top:800px; left:calc(50% - 50px);
+   z-index: 4;
+   display: flex;
+   justify-content: space-between;
+}
+
+.hero_slide_button {
+   width: 12px; height: 12px;
+   background-color: rgba(255,255,255,0.4);
+   border-radius: 6px;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+
+.hero_slide_button:nth-child(1) {
+   background-color: rgba(255,255,255,1);
+}
+
+@keyframes fade_in {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+}
+
+@keyframes fade_out {
+   0% {opacity: 1;}
+   100% {opacity: 0;}
+}
+
+
+
+
+
+
+main { width: 100%; height: auto;}
+.main_wrap { width: 100%; height: auto; text-align: center;}
+
+.main_img_1920 { display:block; margin: 0 auto;}
+.main_img_1440 { width: 100%; display:none;}
+.main_img_1024 { width: 100%; display:none;}
+.main_img_768 { width: 100%; display:none;}
+.main_img_640 { width: 100%; display:none;}
+.main_img_360 { width: 100%; display:none;}
+
+/* Media Query */
+
+@media screen and (max-width:1440px) {
+
+   .main_img_1920 { display:none;}
+   .main_img_1440 { display:block;}
+   
+}
+
+@media screen and (max-width:1024px) {
+
+   .main_img_1920 { display:none;}
+   .main_img_1440 { display:none;}
+   .main_img_1024 { display:block;}
+   
+
+}
+
+@media screen and (max-width:768px) {
+   .main_img_1920 { display:none;}
+   .main_img_1440 { display:none;}
+   .main_img_1024 { display:none;}
+   .main_img_768 { display:block;}
+
+   
+}
+
+@media screen and (max-width:640px) {
+
+   .main_img_1920 { display:none;}
+   .main_img_1440 { display:none;}
+   .main_img_1024 { display:none;}
+   .main_img_768 { display:none;}
+   .main_img_640 { display:block;}
+   
+}
+
+@media screen and (max-width:479px) {
+
+   .main_img_1920 { display:none;}
+   .main_img_1440 { display:none;}
+   .main_img_1024 { display:none;}
+   .main_img_768 { display:none;}
+   .main_img_640 { display:none;}
+   .main_img_360 { display:block;}
+
+}

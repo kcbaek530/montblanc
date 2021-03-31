@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>mlouye</title>
+   <link rel="icon" href="img/favicon.png">
+   <link rel="icon" type="image/x-icon" href="img/favicon.ico"> 
+
+   <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+   <header>
+      <nav>
+         <img src="img/montblanc_header.png">
+      </nav>
+   </header>
+   <main>
+      <div class="hero">
+         <div class="hero_slide">
+            <h2 class="hero_slide_title"></h2>
+         </div>
+         <div class="hero_slide">
+            <h2 class="hero_slide_title"></h2>
+         </div>
+         <div class="hero_slide">
+            <h2 class="hero_slide_title"></h2>
+         </div>
+         <div class="hero_slide">
+            <h2 class="hero_slide_title"></h2>
+         </div>
+         <div class="hero_slide">
+            <h2 class="hero_slide_title"></h2>
+         </div>
+         <!-- <ul class="hero_slide_nav">
+            <li class="hero_slide_button" onclick="slideChange(0);"></li>
+            <li class="hero_slide_button" onclick="slideChange(1);"></li>
+            <li class="hero_slide_button" onclick="slideChange(2);"></li>
+         </ul> -->
+      </div>
+
+      <div class="main_wrap">
+         <img src="img/montblanc_body.png" class="main_img_1920">
+      </div>
+   </main>
+   <footer></footer>
+
+   <script>
+      var currentSlide = 0;
+      var nextSlide;
+
+      function slideChange(target) {
+         
+         for (i=0; i<3; i++)
+         { 
+            if (i != target) {
+               document.getElementsByClassName('hero_slide')[i].style = "display:none";
+
+               document.getElementsByClassName('hero_slide_button')[i].style = "background-color: rgba(255,255,255,0.4);";
+
+            }
+         }
+
+         document.getElementsByClassName('hero_slide')[target].style = "display:block; animation:fade_in 0.5s forwards;";
+
+         document.getElementsByClassName('hero_slide_button')[target].style = "background-color: rgba(255,255,255,1);";
+
+         currentSlide = target;
+      }
+  
+      function autoSlide() {
+
+         nextSlide = currentSlide + 1;
+
+         if (nextSlide == 5) { nextSlide = 0;}
+           
+         for (i=0; i<5; i++)
+            { 
+               if (i != nextSlide) {
+
+                     document.getElementsByClassName('hero_slide')[i].style = "display:none";
+
+                     // document.getElementsByClassName('hero_slide_button')[i].style = "background-color: rgba(255,255,255,0.4);";
+
+                  }
+            }
+
+         document.getElementsByClassName('hero_slide')[nextSlide].style = "display:block; animation:fade_in 0.5s forwards;";
+
+         // document.getElementsByClassName('hero_slide_button')[nextSlide].style = "background-color: rgba(255,255,255,1);";
+
+         currentSlide++; 
+         if (currentSlide == 5) { currentSlide = 0;}
+      }
+      
+      
+      var autoSlideChage = setInterval(autoSlide,3000);
+  
+      </script>
+</body>
+</html>
